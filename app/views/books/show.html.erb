@@ -62,11 +62,12 @@
       <% end %>
        <div class="new-comment">
         <%= form_with(model:[@book, @comment], local: true) do |f| %>
-          <%= f.text_area :content, :size => "100x10" %>
+          <%= f.text_area :content, :size => "90x5" %>
           <div>
           <%= f.submit "送信" %>
           </div>
         <% end %>
+      </div>
     </div>
   </div>
 </div>
