@@ -4,6 +4,8 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @user = @book.user
+    @comments = @book.book_comments
+    @comment = BookComment.new
   end
 
   def index
@@ -55,7 +57,7 @@ class BooksController < ApplicationController
       redirect_to books_path
     end
   end
-  
+
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
